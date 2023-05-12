@@ -1,0 +1,21 @@
+package kr.or.ddit.admin.service.impl;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.springframework.stereotype.Service;
+import kr.or.ddit.admin.service.ExpertService;
+import kr.or.ddit.mapper.admin.ExpertMapper;
+import kr.or.ddit.member.vo.ExpertVO;
+
+@Service
+public class ExpertServiceImpl implements ExpertService {
+
+	@Inject
+	private ExpertMapper expMapper;
+	
+	@Override
+	public List<ExpertVO> selectExpList() {
+		return expMapper.selectExpList();
+	}
+
+}

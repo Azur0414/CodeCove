@@ -1,0 +1,22 @@
+package kr.or.ddit.member.service;
+
+import javax.servlet.http.HttpServletRequest;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.member.vo.MemberVO;
+
+public interface IMemberService {
+	public ServiceResult idCheck(String memId);
+
+	public ServiceResult signup(HttpServletRequest req, MemberVO memberVO);
+
+	public MemberVO loginCheck(MemberVO member);
+
+	public String idForgetProcess(MemberVO member);
+
+	public String pwForgetProcess(MemberVO member);
+
+	public MemberVO selectMember(MemberVO sessionMember);
+
+	public ServiceResult profileUpdate(HttpServletRequest req, MemberVO memberVO);
+}

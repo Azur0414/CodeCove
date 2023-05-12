@@ -1,0 +1,11 @@
+package kr.or.ddit.mapper.admin;
+
+import org.apache.ibatis.annotations.Mapper;
+import kr.or.ddit.mainpage.vo.NoticeVO;
+
+@Mapper
+public interface NoticeMapper {
+
+	public NoticeVO selectNoticeList();
+
+}

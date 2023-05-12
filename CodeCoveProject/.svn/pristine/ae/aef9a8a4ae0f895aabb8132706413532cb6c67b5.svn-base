@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<div class="container pt-7">
+	<div class="row">
+		<h4>공지사항</h4>
+	</div>
+	<div class="row">
+		<div class="d-flex justify-content-end">
+			<label for="searchWord" class="col-sm-1 col-form-label py-1">단어검색</label>
+			<div class="col-sm-2">
+				<form method="post" action="/coco/admin/noticeRetrieve" id="searchForm">
+					<input type="hidden" name="page" id="page">
+					<input type="text" name="searchWord" id="searchWord" class="form-control">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="card">
+			<table>
+				<thead>
+					<tr>
+						<th>순번</th> 
+						<th>제목</th> 
+						<th>작성자</th> 
+						<th>조회수</th> 
+						<th>등록일</th> 
+					</tr> 
+				</thead>
+				<tbody>
+					<tr>
+						<td>col1</td>
+						<td>col2</td>
+						<td>col3</td>
+						<td>col4</td>
+						<td>col5</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row">
+				페이지네이션
+			</div>
+		</div>
+		<div class="row">
+			<div class="d-flex justify-content-end">
+				<input type="button" value="등록">
+			</div>
+		</div>
+	</div>
+</div>

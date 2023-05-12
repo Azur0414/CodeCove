@@ -1,0 +1,10 @@
+package kr.or.ddit.admin.vo;
+
+public class ComcodeVO {
+
+	private String comCode;
+	private String comCodeGrp;
+	private String comCodeNm;
+	
+	
+}

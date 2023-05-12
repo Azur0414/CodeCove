@@ -1,0 +1,14 @@
+package kr.or.ddit.mapper;
+
+import java.util.List;
+
+import kr.or.ddit.board.free.vo.FreeBoardVO;
+import kr.or.ddit.vo.PaginationInfoVO;
+
+public interface FreeBoardMapper {
+
+	public int selectBoardCount(PaginationInfoVO<FreeBoardVO> pagingVO);
+
+	public List<FreeBoardVO> selectFreeBoardList(PaginationInfoVO<FreeBoardVO> pagingVO);
+
+}

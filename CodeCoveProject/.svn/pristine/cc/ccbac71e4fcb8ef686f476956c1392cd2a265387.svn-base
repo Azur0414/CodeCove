@@ -1,0 +1,21 @@
+package kr.or.ddit.mainpage.vo;
+
+import java.util.Date;
+import lombok.Data;
+
+@Data
+public class NoticeVO {
+
+	private String notiNum;
+	private String pjId;
+	private String writerId;
+	private String notiTitle;
+	private String notiContent;
+	private int viewNum;
+	private String notiClassCode;
+	private String notiDelYn;
+	private Date notiDate;
+	
+	private int totalCnt;
+	
+}

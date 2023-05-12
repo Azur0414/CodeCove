@@ -1,0 +1,18 @@
+package kr.or.ddit.mapper;
+
+import kr.or.ddit.member.vo.MemberRole;
+import kr.or.ddit.member.vo.MemberVO;
+
+public interface LoginMapper {
+	public MemberVO idCheck(String memId);
+
+	public int signup(MemberVO memberVO);
+
+	public MemberVO loginCheck(MemberVO member);
+
+	public String idForgetProcess(MemberVO member);
+
+	public String pwForgetProcess(MemberVO member);
+
+	public void signupRole(MemberRole memberRole);
+}

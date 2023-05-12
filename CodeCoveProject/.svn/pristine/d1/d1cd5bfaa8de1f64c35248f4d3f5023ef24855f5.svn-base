@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<header class="z-fixed header-absolute-top header-transparent sticky-reverse">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container position-relative">
+            <!--:Brand Logo:-->
+            <a class="navbar-brand" href="demo-jobs.html">
+                <img src="/resources/assets/img/logo/logo.svg" alt="" class="img-fluid navbar-brand-light">
+                <img src="/resources/assets/img/logo/logo-white.svg" alt="" class="img-fluid navbar-brand-dark">
+                <sub class="d-none d-sm-inline-block position-absolute end-0 bottom-0 me-n2 mb-n2">Jobs</sub>
+            </a>
+            <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                <div class="nav-item btn-group me-2 me-lg-0">
+                    <a href="demo-jobs-post-job.html" class="btn btn-outline-info btn-sm py-1 px-3">Post Job</a>
+                    <a href="#!" class="btn btn-sm btn-outline-info py-1 px-3">
+                    <i class="bx bxs-user-circle me-1"></i>SignUp</a>
+
+                </div>
+                <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i></i>
+                    </span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="mainNavbarTheme">
+
+                <ul class="navbar-nav me-lg-3 ms-lg-auto">
+                    <li class="nav-item">
+                        <a href="demo-jobs.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs listing</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="demo-jobs-listing.html">Lisitng Row</a>
+                            <a class="dropdown-item" href="demo-jobs-listing-grid.html">Lisitng Grid</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="demo-jobs-job-detail.html">Job Details</a>
+                            <a class="dropdown-item" href="demo-jobs-job-apply.html">Apply for Job</a>
+                            <a class="dropdown-item" href="demo-jobs-employer.html">Employer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="demo-jobs-upload-resume.html" class="nav-link">Upload Resume</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">Eng</a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#!" class="active dropdown-item">
+                                <img src="/resources/assets/img/country/us.svg" class="me-2" width="20" alt="">
+                                <small>English</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/pt.svg" class="me-2" width="20" alt="">
+                                <small>Portuguese</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/de.svg" class="me-2" width="20" alt="">
+                                <small>German</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/fr.svg" class="me-2" width="20" alt="">
+                                <small>French</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/dk.svg" class="me-2" width="20" alt="">
+                                <small>Danish</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/es.svg" class="me-2" width="20" alt="">
+                                <small>Española</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/nl.svg" class="me-2" width="20" alt="">
+                                <small>Dutch</small>
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                <img src="/resources/assets/img/country/jp.svg" class="me-2" width="20" alt="">
+                                <small>japanese</small>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Main content-->

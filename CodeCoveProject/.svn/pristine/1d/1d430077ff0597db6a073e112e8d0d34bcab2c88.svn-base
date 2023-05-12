@@ -1,0 +1,113 @@
+package kr.or.ddit.project.project.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.or.ddit.project.project.service.IProjectService;
+import kr.or.ddit.project.project.vo.ProjectVO;
+import kr.or.ddit.project.work.service.IWorkService;
+import kr.or.ddit.project.work.vo.WorkVO;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller
+@RequestMapping("/coco/project")
+public class CrudProjectController {
+	
+	@Inject
+	private IProjectService projectService;
+	
+	@Inject
+	private IWorkService workService;
+
+	@RequestMapping(value="/register", method = RequestMethod.GET)
+	public String registerForm(ProjectVO project, Model model) {
+		
+//		Map<String, String> statusMap = new HashMap<String, String>();
+//		statusMap.put("PS01", "모집중");
+//		statusMap.put("PS02", "진행중");
+//		statusMap.put("PS03", "완료");
+//
+//		model.addAttribute("statusMap",statusMap);
+		model.addAttribute("project", project);
+		return "project/register";
+	}
+	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public String register(ProjectVO project, Model model) {
+		log.info("생성날짜" + project.getPjStartDate());
+		project.setPjCreatorId("a001");
+		project.setPjPnum("5");
+		project.setPjAdminId("admin");
+		project.setPjStatusCode("PS01");
+		project.setPjProgress("0");
+		projectService.register(project);
+		model.addAttribute("msg","등록이 완료되었습니다.");
+		return "project/success";
+	}
+	
+	@RequestMapping(value="/list", method = RequestMethod.GET)
+	public String projectList(Model model) {
+		List<ProjectVO> projList = projectService.list();
+		model.addAttribute("list", projList);
+		return "project/list";
+	}
+	
+	@RequestMapping(value="/detail/{pjId}",method=RequestMethod.GET)
+	public String projectDetail(@PathVariable("pjId") String pjId,Model model) {
+		
+		Map<String, String> priority = new HashMap<String, String>();
+		priority.put("WP01", "낮음");
+		priority.put("WP02", "보통");
+		priority.put("WP03", "높음");
+		priority.put("WP04", "긴급");
+		model.addAttribute("priority",priority);
+		
+		ProjectVO project = projectService.detail(pjId);
+		
+		List<WorkVO> workList = workService.list(pjId);
+		
+		model.addAttribute("project", project);
+		model.addAttribute("workList",workList);
+		model.addAttribute("work", new WorkVO());
+		return "project/detail";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String projectModify(String pjId,Model model) {
+		
+		Map<String, String> statusMap = new HashMap<String, String>();
+		statusMap.put("PS01", "모집중");
+		statusMap.put("PS02", "진행중");
+		statusMap.put("PS03", "완료");
+		model.addAttribute("statusMap",statusMap);
+		
+		ProjectVO project = projectService.detail(pjId);
+		model.addAttribute("project", project);
+		return "project/modify";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String projectModify(ProjectVO project, Model model) {
+//		log.info("퍼센트:" + project.getPjProgress());
+		projectService.modify(project);
+		model.addAttribute("msg", "수정이 완료되었습니다.");
+		return "project/success";
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String projectDelete(String pjId, Model model) {
+		projectService.delete(pjId);
+		model.addAttribute("msg", "삭제가 완료되었습니다.");
+		return "project/success"; 
+	}
+}

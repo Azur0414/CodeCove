@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<h3>멘토신청 디테일</h3>
+
+<table border="1">
+	<tr>
+		<th>신청번호 : </th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>회원아이디 : </th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>자기소개 : </th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>경력사항 : </th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>접수코드 : </th>
+		<td>접수 / 검토 중 / 승인완료 / 승인거절</td>
+	</tr>
+	<tr>
+		<th>반려사유 : </th>
+		<td></td>
+	</tr>
+</table>

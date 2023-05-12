@@ -1,0 +1,16 @@
+package kr.or.ddit.mapper.project;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.or.ddit.project.project.vo.ProjectVO;
+
+@Mapper
+public interface IProjectMapper {
+	public void register(ProjectVO project);
+	public List<ProjectVO> list();
+	public ProjectVO detail(String pjId);
+	public void modify(ProjectVO project);
+	public void delete(String pjId);
+}

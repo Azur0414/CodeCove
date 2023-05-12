@@ -1,0 +1,19 @@
+package kr.or.ddit.mapper.member;
+
+import java.util.List;
+
+import kr.or.ddit.expert.vo.MyExpertVO;
+import kr.or.ddit.member.vo.ExpertVO;
+import kr.or.ddit.member.vo.MemberVO;
+
+public interface MypageMapper {
+
+	List<MyExpertVO> totalList(MemberVO member);
+
+	int progressUpdate(String epayNum);
+
+	List<ExpertVO> mentorList(MemberVO member);
+
+	int mentorInsert(ExpertVO expertVO);
+
+}

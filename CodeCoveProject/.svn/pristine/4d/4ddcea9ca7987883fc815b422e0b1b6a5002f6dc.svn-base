@@ -1,0 +1,13 @@
+package kr.or.ddit.mapper.solutions;
+
+import java.util.List;
+
+import kr.or.ddit.expert.vo.ExpertProdVO;
+import kr.or.ddit.expert.vo.MyExpertVO;
+
+public interface EprodMapper {
+
+	public void templateInsert(ExpertProdVO expertProdVO) throws Exception;
+
+
+}

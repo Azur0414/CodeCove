@@ -1,0 +1,26 @@
+package kr.or.ddit.admin.service;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.springframework.stereotype.Service;
+import kr.or.ddit.admin.vo.ComcodeVO;
+import kr.or.ddit.common.PaginationInfoVO;
+import kr.or.ddit.mapper.admin.ComcodeMapper;
+
+@Service
+public class ComcodeServiceImpl implements IComcodeService {
+
+	@Inject
+	private ComcodeMapper mapper;
+	
+	@Override
+	public int selectCodeCount(PaginationInfoVO<ComcodeVO> pagingVO) {
+		return mapper.selectCodeCount(pagingVO);
+	}
+
+	@Override
+	public List<ComcodeVO> selectCodeList(PaginationInfoVO<ComcodeVO> pagingVO) {
+		return mapper.selectCodeList(pagingVO);
+	}
+
+}

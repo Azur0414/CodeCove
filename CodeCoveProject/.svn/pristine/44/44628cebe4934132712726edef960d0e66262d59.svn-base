@@ -1,0 +1,21 @@
+package kr.or.ddit.member.service;
+
+import java.util.List;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.member.vo.ExpertVO;
+import kr.or.ddit.member.vo.MemberVO;
+
+public interface IMypageService {
+
+	// 상태 업데이트
+	public ServiceResult progressUpdate(String epayNum);
+
+	// 멘토신청내역리스트
+	public List<ExpertVO> totalList(MemberVO member);
+
+	// 멘토신청
+	public int mentorInsert(ExpertVO expertVO);
+
+	
+}

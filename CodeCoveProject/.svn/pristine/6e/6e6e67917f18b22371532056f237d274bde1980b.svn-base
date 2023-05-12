@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.ComcodeMapper">
+
+	<select id="searchCodeRecord" parameterType="PaginationInfoVO" resultType="int" >
+		SELECT
+			COUNT(*)
+		FROM
+			TB_COM_CODE C LEFT OUTER JOIN TB_COM_CODE_GROUP G ON(C.COM_CODE_GRP = G.COM_CODE_GRP)
+		WHERE
+			(
+				INSTR(COM_CODE, #{searchWord}) > 0
+				OR
+				INSTR(COM_CODE_GRP, #{searchWord}) > 0
+				OR
+				INSTR(COM_CODE_NM, #{searchWord}) > 0
+				OR
+				INSTR(COM_CODE_GRP_NM, #{searchWord}) > 0
+			)
+		ORDER BY
+			C.COM_CODE
+	</select>
+
+	<select id="searchCodeList" parameterType="PaginationInfoVO" resultType="ComcodeVO">
+		select 
+			B.*
+		from (select
+				ROWNUM RNUM, A.*
+			  from ( select 
+						C.COM_CODE, C.COM_CODE_GRP, C.COM_CODE_NM, G.COM_CODE_GRP_NM
+					 from
+						TB_COM_CODE C left outer join TB_COM_CODE_GROUP G on(C.COM_CODE_GRP = G.COM_CODE_GRP)
+					 order by
+						COM_CODE 
+				  ) A
+			  ) B
+		WHERE 
+			RNUM BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	
+
+</mapper>

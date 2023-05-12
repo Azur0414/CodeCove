@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.ExpertMapper">
+
+	<select id="selectExpList" resultType="ExpertVO">
+		select
+			EXP_FORM_NUM, FORM_ID, EXP_FORM_CONTENT, EXP_FORM_ASSUME, EXP_APPR_CODE, EXP_REFUSE
+		from
+			TB_EXP_FORM
+	</select>
+
+</mapper>

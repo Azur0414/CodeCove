@@ -1,0 +1,14 @@
+package kr.or.ddit.admin.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class AdminMainController {
+	
+	@RequestMapping("/adminMain.do")
+	public String adminMainView() {
+		return "admins/content";
+	}
+
+}

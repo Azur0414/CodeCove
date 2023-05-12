@@ -1,0 +1,16 @@
+package kr.or.ddit.board.free.vo;
+
+import lombok.Data;
+
+@Data
+public class FreeBoardVO {
+
+	private char freeNum;
+	private String writerId;
+	private String freeTitle;
+	private String freeContent;
+	private String freeDate;
+	private int repNum;
+	private int viewNum;
+	
+}

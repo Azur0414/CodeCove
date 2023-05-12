@@ -1,0 +1,344 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+			<!--::Page content with sidebar::-->
+			<div class="content d-flex flex-column-fluid position-relative">
+
+				<!--:Content inner layout:-->
+				<div class="d-flex flex-column flex-md-row h-100">
+					<!--:Content inner Content:-->
+					<div
+						class="col-md-7 col-lg-8 layout-content d-flex flex-column h-100">
+						<div class="position-relative">
+							<div class="px-3 px-xl-7">
+								<div
+									class="alert mt-5 d-flex align-items-center border-0 mb-0 bg-success bg-opacity-10 alert-dismissible fade show"
+									role="alert">
+									<div class="fs-1 lh-1 me-4">🌟</div>
+									<div class="flex-grow-1">
+										<div>
+											<strong>Unlock</strong> unlimited access.
+										</div>
+										<a href="page-plans.html"
+											class="small text-decoration-underline">View Plans</a>
+									</div>
+									<button type="button" class="btn-close" data-bs-dismiss="alert"
+										aria-label="Close"></button>
+								</div>
+							</div>
+							<!--:Post Article Card:-->
+							<article class="py-5 px-3 px-xl-7 border-bottom">
+								<a href="post-details.html" class="position-relative d-block">
+									<!--:Image label:--> <span data-tippy-content="Trending"
+									data-tippy-placement="top"
+									class="d-flex align-items-center justify-content-center rounded-pill width-4x height-4x bg-dark bg-opacity-50 text-white position-absolute start-0 top-0 ms-3 mt-3 z-index-1">
+										<span class="material-symbols-sharp">trending_up</span>
+								</span> <img src="/resources/assets/img/large6.jpg" class="img-fluid rounded-4"
+									alt="test image" />
+								</a>
+								<div class="pt-4">
+									<div class="d-flex align-items-center mb-3">
+										<small class="text-muted">by</small> <a href="#!"
+											class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+											<span class="flex-grow-1 small ms-2"> @monika </span>
+										</a>
+									</div>
+									<a href="post-details.html" class="mb-3 d-block">
+										<h2 class="mb-0 display-6">How Ethereum Staking is
+											Creating a $10 Billion Ponzi Scheme</h2>
+									</a>
+									<p class="clamp-3">Ut enim ad minim veniam, quis nostrud
+										exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate
+										velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+										sint occaecat cupidatat non proident, sunt in culpa qui
+										officia deserunt mollit anim id est laborum.</p>
+									<div class="d-flex justify-content-between">
+										<ul class="list-divided list-unstyled mb-0">
+											<li><a href="#!" class="link-hover-underline">Category</a></li>
+											<li>5h</li>
+											<li class="text-muted">3 min read</li>
+										</ul>
+										<a href="#!" data-tippy-content="Add to Bookmarks"
+											data-tippy-placement="left"> <span
+											class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+										</a>
+									</div>
+								</div>
+							</article>
+							<!--:nav:-->
+							<nav class="nav nav-pills pt-5 px-3 px-xl-5">
+								<a href="#!" class="nav-link active rounded-pill">For you</a> <a
+									href="#!" class="nav-link rounded-pill">Popular</a> <a
+									href="#!" class="nav-link rounded-pill">Following</a> <a
+									href="#!" class="nav-link rounded-pill">New</a>
+							</nav>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm1.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">How Ethereum Staking is Creating a $10
+													Billion Ponzi Scheme</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>13h</li>
+													<li class="text-muted">4 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm4.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">Reconceiving Education with the
+													Metaverse</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>18h</li>
+													<li class="text-muted">5 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm5.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">Tincidunt id aliquet risus feugiat in.
+													Enim diam vulputate ut pharetra</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>21 Nov</li>
+													<li class="text-muted">6 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm6.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">How Ethereum Staking is Creating a $10
+													Billion Ponzi Scheme</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>13h</li>
+													<li class="text-muted">4 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm7.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">Reconceiving Education with the
+													Metaverse</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>18h</li>
+													<li class="text-muted">5 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Article post:-->
+							<article class="px-3 py-5 px-xl-5" data-aos="fade-up">
+								<div class="row align-items-center">
+
+									<div
+										class="col-12 col-sm-4 col-lg-3 order-sm-last mb-3 mb-sm-0">
+										<a href="post-details.html" class="d-block"> <img
+											src="/resources/assets/img/sm8.jpg" class="img-fluid rounded-3" alt="">
+										</a>
+									</div>
+									<div class="col-12 col-sm order-sm-1">
+										<div>
+											<div class="d-flex align-items-center mb-3">
+												<small class="text-muted">by</small> <a href="#!"
+													class="d-flex align-items-center flex-shrink-0 position-relative z-index-2">
+													<span class="flex-grow-1 small ms-2"> @admondfits </span>
+												</a>
+											</div>
+											<a href="post-details.html" class="mb-2 d-block">
+												<h3 class="mb-0">Tincidunt id aliquet risus feugiat in.
+													Enim diam vulputate ut pharetra</h3>
+											</a>
+											<p class="clamp-2 mb-2">Justo laoreet sit amet cursus sit
+												amet. Vestibulum lectus mauris ultrices eros. Dictum at
+												tempor commodo ullamcorper a lacus vestibulum. Commodo quis
+												imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+												Purus in mollis nunc sed id semper risus in.</p>
+											<div class="d-flex justify-content-between">
+												<ul class="list-divided list-unstyled mb-0">
+													<li><a href="#!" class="link-hover-underline">Category</a></li>
+													<li>21 Nov</li>
+													<li class="text-muted">6 min read</li>
+												</ul>
+												<a href="#!" data-tippy-content="Add to Bookmarks"
+													data-tippy-placement="left"> <span
+													class="align-middle fs-5 material-symbols-sharp">bookmark_add</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--:Loading:-->
+							<div class="py-5 d-flex justify-content-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--:Footer:-->
+			<!-- Back to Top button -->
+			<a data-tippy-placement="left" data-tippy-content="Scroll to Top"
+				href="#"
+				class="toTop btn text-body bg-primary-subtle border-0 p-0 width-4x height-4x shadow d-flex align-items-center justify-content-center">
+				<span class="material-symbols-sharp align-middle">
+					arrow_upward </span>
+			</a>
+
+

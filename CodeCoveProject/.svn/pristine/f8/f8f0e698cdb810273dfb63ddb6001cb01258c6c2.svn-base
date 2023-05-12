@@ -1,0 +1,32 @@
+package kr.or.ddit.admin.controller;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import kr.or.ddit.admin.service.IExpertService;
+import kr.or.ddit.member.vo.ExpertVO;
+
+@Controller
+@RequestMapping("/coco/admin")
+public class ExpertPermissionContorller {
+
+	@Inject
+	private IExpertService expService;
+	
+	@GetMapping("/expApplyList")
+	public String expApplyList(Model model) {
+		List<ExpertVO> expList = expService.selectExpList();
+		
+		model.addAttribute("expList", expList);
+		return "admins/list_expApply"; 
+	}
+	
+	@GetMapping("/expApplyDetail")
+	public String expApplyDetail() {
+		return "admins/detail_expApply";
+	}
+	
+}

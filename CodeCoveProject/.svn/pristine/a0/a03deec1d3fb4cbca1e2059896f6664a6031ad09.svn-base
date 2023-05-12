@@ -1,0 +1,10 @@
+package kr.or.ddit.admin.service;
+
+import kr.or.ddit.admin.vo.ComcodeVO;
+import kr.or.ddit.common.PaginationInfoVO;
+
+public interface IComcodeService {
+
+	public void retrieveSearchList(PaginationInfoVO<ComcodeVO> pagingVO);
+
+}

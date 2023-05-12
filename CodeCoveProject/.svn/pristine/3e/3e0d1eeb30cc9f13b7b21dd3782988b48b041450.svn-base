@@ -1,0 +1,9 @@
+package kr.or.ddit.mainpage.service;
+
+import kr.or.ddit.mainpage.vo.NoticeVO;
+
+public interface NoticeService {
+
+	public NoticeVO selectNoticeList();
+
+}

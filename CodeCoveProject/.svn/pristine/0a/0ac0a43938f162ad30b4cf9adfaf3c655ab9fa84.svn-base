@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.ExpertMapper">
+
+	<!-- 멘토신청자 리스트 -->
+	<select id="selectExpList" resultType="ExpertVO">
+		/* kr.or.ddit.mapper.admin.ExpertMapper.selectExpList */
+		SELECT
+			  EXP_FORM_NUM
+			, FORM_ID
+			, EXP_FORM_CONTENT
+			, EXP_FORM_ASSUME
+			, EXP_APPR_CODE
+			, EXP_REFUSE
+			, EXP_REG_DATE
+		FROM
+			TB_EXP_FORM
+	</select>
+	
+	<!-- 멘토신청서 세부내역 -->
+	<select id="selectExpform" parameterType="string" resultType="ExpertVO">
+		/* kr.or.ddit.mapper.admin.ExpertMapper.selectExpform */
+		SELECT
+			  EXP_FORM_NUM
+			, FORM_ID
+			, EXP_FORM_CONTENT
+			, EXP_FORM_ASSUME
+			, EXP_APPR_CODE
+			, EXP_REFUSE
+			, EXP_REG_DATE
+		FROM
+			TB_EXP_FORM
+		WHERE
+			EXP_FORM_NUM = #{expFormNum}
+	</select>
+	
+	<!-- 멘토승인 후 멘토회원 정보 등록 -->
+	<insert id="registerExpert" parameterType="ExpertVO">
+		/* kr.or.ddit.mapper.admin.ExpertMapper.registerExpert */
+		INSERT INTO
+			TB_EXPERT
+				(  EXPERT_ID
+				 , PRESENTATION
+				 , ASSUME )
+			VALUES
+				(  #{expertId}
+				 , #{presentation}
+				 , #{assume}
+				) 
+	</insert>
+	
+	<!-- 멘토승인 후 멘토회원 접수코드 변경 -->
+	<update id="modifyApplyCode" parameterType="ExpertVO">
+		/* kr.or.ddit.mapper.admin.ExpertMapper.modifyApplyCode */
+		UPDATE
+			TB_EXP_FORM
+		SET
+			EXP_APPR_CODE = 'APP03'
+		WHERE
+			EXP_FORM_NUM = #{expFormNum}
+	</update>
+	
+	<update id="refuseExpert" parameterType="ExpertVO">
+		/* kr.or.ddit.mapper.admin.ExpertMapper.refuseExpert */
+		UPDATE
+			TB_EXP_FORM
+		SET
+			EXP_APPR_CODE = 'APP04',
+			EXP_REFUSE = #{expRefuse}
+		WHERE
+			EXP_FORM_NUM = #{expFormNum}
+	</update>
+
+</mapper>

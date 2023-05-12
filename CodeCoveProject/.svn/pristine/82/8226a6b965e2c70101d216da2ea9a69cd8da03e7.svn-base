@@ -1,0 +1,32 @@
+package kr.or.ddit.member.service;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.mapper.member.MypageMapper;
+import kr.or.ddit.member.vo.MemberVO;
+
+@Service
+public class MypageServiceImpl implements IMypageService {
+	
+	@Inject
+	private MypageMapper mypageMapper;
+
+	@Override
+	public ServiceResult progressUpdate(String epayNum) {
+		
+		ServiceResult result = null;
+		int updateChk = mypageMapper.progressUpdate(epayNum);
+		
+		if (updateChk > 0) {
+			result = ServiceResult.OK;
+		} else {
+			result = ServiceResult.FAIL;
+		}
+		return result;
+		
+	}
+	
+}

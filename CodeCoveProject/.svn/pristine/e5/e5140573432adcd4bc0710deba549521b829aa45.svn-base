@@ -1,0 +1,173 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!--Main Search Modal-->
+<!-- Modal -->
+<div class="modal" id="modal_search" tabindex="-1"
+	aria-labelledby="modal_searchLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<!--Search inner-->
+				<div class="">
+
+					<!--Search form-->
+					<form>
+						<div class="position-relative mb-4">
+							<div class="text-body-secondary">
+								<span class="material-symbols-rounded position-absolute start-0 top-50 translate-middle-y ms-3"> search </span>
+							</div>
+							<input type="text" autofocus class="form-control form-control-lg border-2 border-primary border ps-8" placeholder="Search App...">
+						</div>
+					</form>
+
+					<!--Recently searched-->
+					<div class="d-flex mb-2 align-items-center">
+						<h6 class="d-block mb-0 me-3 flex-grow-1">
+							<span
+								class="material-symbols-rounded align-middle me-1 fs-5 opacity-50">
+								history </span> Recent
+						</h6>
+						<a href="#!" class="small flex-shrink-0 d-block">Clear All</a>
+					</div>
+					<div class="list-group">
+						<!--Recently searched item-->
+						<a href="#"
+							class="list-group-item px-3 d-flex overflow-hidden align-items-center list-group-item-action">
+							<div class="flex-grow-1 overflow-hidden">
+								<span class="text-truncate">Campaign reports</span>
+							</div>
+						</a>
+						<!--Recently searched item-->
+						<a href="#"
+							class="list-group-item px-3 d-flex overflow-hidden align-items-center list-group-item-action">
+							<div class="flex-grow-1 overflow-hidden">
+								<span class="text-truncate">Funnel reports</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="pt-0 border-top-0 modal-footer">
+				<span class="small">Press ESC or <span
+					class="badge bg-secondary" role="button" data-bs-dismiss="modal">Click
+						me</span> to close
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--//Page Toolbar//-->
+<div class="toolbar px-3 px-lg-6 py-3">
+	<div class="position-relative container-fluid px-0">
+		<div class="row align-items-center position-relative">
+			<div class="col-md-8 mb-4 mb-md-0">
+				<h3 class="mb-2">관리코드 관리화면</h3>
+
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb mb-0">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item active">Datatables</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!--//Page Toolbar End//-->
+
+<!--//Page content//-->
+<div class="content pt-3 px-3 px-lg-6 d-flex flex-column-fluid">
+	<div class="container-fluid px-0">
+		<div class="row">
+			<div class="col-12 mb-3 mb-lg-5">
+				<div class="card">
+					<div class="table-responsive">
+						<div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+							<div class="row">
+								<div class="col-sm-12 col-md-9">
+									<div class="dataTables_length" id="datatable_length">
+										<label> Show
+											<select name="datatable_length" aria-controls="datatable" class="form-select form-select-sm">
+												<option value="10">10</option>
+												<option value="25">25</option>
+												<option value="50">50</option>
+												<option value="100">100</option>
+											</select> 
+											entries
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-2 me-1">
+									<form class="position-relative">
+										<span class="d-flex size-20 rounded-circle ms-3 align-items-center justify-content-center position-absolute start-0 top-50 translate-middle-y">
+											<i class="material-symbols-rounded align-middle opacity-50"></i>
+										</span>
+										<input type="text" class="form-control py-1 form-control-sm" placeholder="Search...">
+									</form>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<table id="datatable" class="table mt-0 table-striped table-card table-nowrap dataTable no-footer" aria-describedby="datatable_info">
+										<thead class="text-uppercase small text-body-secondary">
+											<tr>
+												<th class="sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">관리코드ID</th>
+												<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">관리코드내용</th>
+												<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">관리코드그룹</th>
+												<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">관리코드그룹이름</th>
+											</tr>
+										</thead>
+										<tbody>
+											<c:set value="${pagingVO.dataList }" var="codeList"/>
+											<c:choose>
+												<c:when test="${empty codeList }">
+													<tr class="text-center"> 
+														<td colspan="4">조회할 관리코드가 존재하지 않습니다</td>
+													</tr>
+												</c:when>
+												<c:otherwise>
+													<c:forEach items="${codeList }" var="code">
+														<tr>
+															<td>${code.comCode } </td>
+															<td>${code.comCodeNm } </td>
+															<td>${code.comCodeGrp } </td>
+															<td>${code.comCodeGrpNm } </td>
+														</tr>
+													</c:forEach>
+												</c:otherwise>
+											</c:choose>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 col-md-5">
+									<div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+								</div>
+								<div class="col-sm-12 col-md-7">
+									<div class="d-flex justify-content-center pagingArea" style="margin-top: 10px;">
+										${pagingVO.pagingHTMLBS }
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--//Page content End//-->
+
+
+<script>
+let searchForm = $("#searchForm");
+let pagingArea = $(".pagingArea").on("click", "a", function(event){
+	let page = $(this).data("page");
+	searchForm.find("[name=page]").val(page);
+	searchForm.submit();
+});
+
+</script>

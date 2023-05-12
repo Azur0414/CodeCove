@@ -1,0 +1,98 @@
+package kr.or.ddit.admin.controller;
+
+import java.util.List;
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.sound.midi.MidiDevice.Info;
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry.CommentSource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import kr.or.ddit.ServiceResult;
+import kr.or.ddit.admin.service.IComcodeService;
+import kr.or.ddit.admin.vo.ComCodeVO;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller
+@RequestMapping("/coco/admin")
+public class CodeModifyContorller {
+
+	@Inject
+	private IComcodeService comCodeService;
+	
+	@GetMapping("/codeModifyForm")
+	public String codeModifyForm(String comCode, Model model) {
+		ComCodeVO comCodeVO = comCodeService.selectCode(comCode);
+		
+		List<ComCodeVO> grpList = comCodeService.selectGrpList();
+		
+		model.addAttribute("grpList", grpList);
+		model.addAttribute("comCodeVO", comCodeVO);
+		model.addAttribute("status", "u");
+		return "admins/form_code";
+	}
+	
+	
+	@PostMapping("/modifyCode")
+	public String modifyCode(HttpServletRequest req, ComCodeVO comCodeVO, Model model) {
+		String goPage = "";
+		ServiceResult result = comCodeService.modifyComCode(req, comCodeVO);
+		if(result.equals(ServiceResult.OK)) {
+			goPage = "redirect:/coco/admin/codeDetail?comCode=" + comCodeVO.getComCode();
+		} else {
+			model.addAttribute("message", "수정에 실패하였습니다.");
+			model.addAttribute("comCodeVO", comCodeVO);
+			goPage = "redirect:/coco/admin/codeModifyForm";
+		}
+		
+		return goPage;
+	}
+	
+	@PostMapping("/removeComCode")
+	public String removeComCode(HttpServletRequest req, String comCode, Model model) {
+		String goPage = "";
+		ServiceResult result = comCodeService.removeComCode(comCode);
+		if(result.equals(ServiceResult.OK)) {
+			goPage = "redirect:/coco/admin/codelist";
+		} else {
+			goPage = "redirect:/coco/admin/codeDetail?comCode=" + comCode;
+		}
+		
+		return goPage;
+	}
+	
+	@PostMapping("/modifyGroup")
+	public String modifyGroup(HttpServletRequest req, ComCodeVO comCodeVO, Model model) {
+		
+		String goPage = "";
+		
+		ServiceResult result = comCodeService.modifyComCodeGroup(req, comCodeVO);
+		if(result.equals(ServiceResult.OK)) {
+			goPage = "redirect:/coco/admin/codeGroupList";
+		} else {
+			model.addAttribute("message", "수정에 실패하였습니다.");
+			model.addAttribute("comCodeVO", comCodeVO);
+			goPage = "redirect:/coco/admin/codeGroupList";
+		}
+		return goPage;
+	}
+	
+	@PostMapping("/removeGroup")
+	public String removeComCodeGroup(HttpServletRequest req, ComCodeVO comCodeVO, Model model) {
+		String goPage = "";
+		ServiceResult result = comCodeService.removeComCodeGroup(comCodeVO);
+		if(result.equals(ServiceResult.OK)) {
+			goPage = "redirect:/coco/admin/codeGroupList";
+		} else {
+			goPage = "redirect:/coco/admin/codeGroupList";
+		}
+		return goPage;
+	}
+	
+	
+	
+	
+}

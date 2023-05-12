@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.member.MypageMapper">
+
+
+<select id="totalList" resultType="MyExpertVO">
+	select B.epay_num, A.EPROD_NAME, B. MY_EPROD, B.AMOUNT, B.EPAY_DATE, A.PROGRESS_CODE, A.EPROD_SUMMARY
+	from tb_myexpert A
+	inner join tb_eprod_payment B
+	on (A.MY_EPROD = B.MY_EPROD and B.EPAY_YN ='Y' and A.EPRODPAY_YN ='Y')
+	where A.BUYER_ID = #{memId}
+</select>
+
+<select id="mentorList" resultType="ExpertVO">
+	select 
+	a.EXP_FORM_NUM, b.com_code_nm, a.EXP_REG_DATE, a.EXP_REFUSE
+	from tb_exp_form a, tb_com_code b
+	where a.EXP_APPR_CODE = b.com_code
+	and form_id = #{memId}
+	order by a.exp_reg_date desc
+
+</select>
+
+<insert id="mentorInsert" parameterType="ExpertVO">
+	insert into TB_EXP_FORM(
+		EXP_FORM_NUM, FORM_ID, EXP_FORM_CONTENT, EXP_FORM_ASSUME, EXP_REG_DATE
+		
+		)VALUES (
+			fn_create_num(to_char(sysdate,'yymmdd'), 'TB_EXP_FORM', 'EXP_FORM_NUM', UPPER('EXPE'))
+			, #{formId}
+			, #{expFormContent}
+			, #{expFormAssume}
+			, SYSDATE )
+			
+</insert>
+
+
+</mapper>

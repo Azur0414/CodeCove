@@ -1,0 +1,29 @@
+package kr.or.ddit.board.free.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.ddit.board.free.vo.FreeBoardVO;
+import kr.or.ddit.mapper.FreeBoardMapper;
+import kr.or.ddit.vo.PaginationInfoVO;
+
+@Service
+public class FreeBoardServiceImpl implements IFreeBoardService {
+
+	@Inject
+	private FreeBoardMapper mapper;
+	
+	@Override
+	public int selectBoardCount(PaginationInfoVO<FreeBoardVO> pagingVO) {
+		return mapper.selectBoardCount(pagingVO);
+	}
+
+	@Override
+	public List<FreeBoardVO> selectFreeBoardList(PaginationInfoVO<FreeBoardVO> pagingVO) {
+		return mapper.selectFreeBoardList(pagingVO);
+	}
+
+}

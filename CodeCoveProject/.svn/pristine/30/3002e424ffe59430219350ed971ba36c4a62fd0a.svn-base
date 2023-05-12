@@ -1,0 +1,10 @@
+package kr.or.ddit.mapper;
+
+import kr.or.ddit.member.vo.MemberVO;
+
+public interface ProfileMapper {
+
+	MemberVO selectMember(MemberVO sessionMember);
+
+	int profileUpdate(MemberVO memberVO);
+}

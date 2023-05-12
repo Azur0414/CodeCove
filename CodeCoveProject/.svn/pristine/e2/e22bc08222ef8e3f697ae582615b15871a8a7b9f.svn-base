@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.NoticeMapper">
+
+	<select id="selectNoticeList" parameterType="NoticeVO" resultType="NoticeVO">
+	/* kr.or.ddit.mapper.admin.NoticeMapper.selectNoticeList */
+	
+		<include refid="kr.or.ddit.mapper.admin.Comm.pagingH"/>
+		
+			SELECT
+				NOTI_NUM
+				, PJ_ID
+				, WRITER_ID
+				, NOTI_TITLE
+				, VIEW_NUM
+				, NOTI_CLASS_CODE
+				, NOTI_DATE
+			FROM
+				TB_NOTICE
+				
+		<include refid="kr.or.ddit.mapper.admin.Comm.pagingF"/>
+		
+	</select>
+
+</mapper>

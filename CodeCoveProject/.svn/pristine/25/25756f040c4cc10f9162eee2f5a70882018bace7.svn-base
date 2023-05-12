@@ -1,0 +1,52 @@
+package kr.or.ddit.admin.controller;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import kr.or.ddit.admin.service.IComcodeService;
+import kr.or.ddit.admin.vo.ComcodeVO;
+import kr.or.ddit.common.PaginationInfoVO;
+
+@Controller
+@RequestMapping("/admin")
+public class ComcodeController {
+
+	@Inject
+	private IComcodeService service;
+	
+	@GetMapping("/list")
+	public String commcodeList(
+			@RequestParam(name = "page", required = false, defaultValue = "1") int currentPage,
+			@RequestParam(required = false, defaultValue = "title") String searchType,
+			@RequestParam(required = false) String searchWord,
+			Model model
+			) {
+		
+		PaginationInfoVO<ComcodeVO> pagingVO = new PaginationInfoVO<ComcodeVO>();
+		
+		if(StringUtils.isNotBlank(searchWord)) {
+			pagingVO.setSearchType(searchType);
+			pagingVO.setSearchWord(searchWord);
+			model.addAttribute("searchType", searchType);
+			model.addAttribute("searchType", searchType);
+		}
+		
+		pagingVO.setCurrentPage(currentPage);
+		int totalRecord = service.selectCodeCount(pagingVO);
+		pagingVO.setTotalRecord(totalRecord);
+		List<ComcodeVO> boardList = service.selectCodeList(pagingVO);
+		pagingVO.setDataList(boardList);
+		
+		model.addAttribute("pagingVO", pagingVO);
+		
+		return "admins/list_comcode";
+	}
+	
+	
+
+}

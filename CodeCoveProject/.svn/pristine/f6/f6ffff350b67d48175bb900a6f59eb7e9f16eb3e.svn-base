@@ -1,0 +1,27 @@
+package kr.or.ddit.member.vo;
+
+import lombok.Data;
+
+@Data
+public class ExpertVO {
+	
+	// TB_EXPERT_FORM
+	private String expFormNum;
+	private String formId;
+	private String expFormContent;
+	private String expFormAssume;
+	private String expApprCode;
+	private String expRefuse;
+	private String expRegDate;
+	
+	// 첨부파일 빠져있음
+	
+	// TB_EXPERT 
+	private String expertId;
+	private String presentation;
+	private String assume;
+	private int accumRep;
+	private String expTag;
+	private String expDelYn;
+
+}

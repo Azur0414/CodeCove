@@ -1,0 +1,60 @@
+package kr.or.ddit.expert.vo;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import kr.or.ddit.common.AttatchVO;
+import lombok.Data;
+
+@Data
+public class ExpertProdVO {
+
+	private String eprodNum;		//상품번호
+	private String eprodCateNum;	//템플릿1, 멘토링2
+	private String expertId;		//멘토아이디 판매자
+	private String eprodName;		//상품명
+	private String eprodTag;		//상품카테고리
+	private int eprodPrice; 		//상품가격
+	private Date eprodDate;		//상품등록일자
+	private int accumNum;		//신고횟수
+	private String eprodLangCode;	//상품언어코드
+	private String eprodSummary;	//상품설명
+	private String eprodDel;		//삭제여부
+	private int eprodHeart;		//상품하트
+	private String eprodThumbnail;	//상품썸네일
+	private String attatchNum;
+	private String memId;	//멤버아이디 첨부파일용
+
+
+	
+	private MultipartFile[] postFiles;
+
+	public void setPostFiles(MultipartFile[] postFiles) {
+		if (postFiles == null || postFiles.length == 0)
+			return;
+		this.postFiles = postFiles;
+		this.attatchList = new ArrayList<>();
+		for (MultipartFile single : postFiles) {
+			if (single.isEmpty())
+				continue;
+			attatchList.add(new AttatchVO(single));
+		}
+	}
+	
+
+	private transient List<AttatchVO> attatchList;
+	
+	
+
+	private List<String> postNumList;
+	private List<AttatchVO> attatchNums;
+
+	private Object jsonContents;	
+	
+	
+	
+	
+}

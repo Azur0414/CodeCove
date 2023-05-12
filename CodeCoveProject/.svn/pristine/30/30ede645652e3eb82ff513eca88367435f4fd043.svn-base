@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.ComcodeMapper">
+
+	<sql id="codeSearch">
+		<if test="searchType != null and searchType == 'comCodeGrp'">
+			and (com_code_grp like '%'||#{searchWord}||'%')
+		</if>
+		<if test="searchType != null and searchType == 'comCodeNM'">
+			and (com_code_nm like '%'||#{searchWord}||'%')
+		</if>
+	</sql>
+
+	<select id="selectCodeCount" parameterType="PaginationInfoVO" resultType="int">
+		select 
+			count(com_code)
+		from
+			TB_COM_CODE
+		where
+			1 = 1 
+		<include refid="codeSearch"/>
+	</select>
+	
+	<select id="selectCodeList" parameterType="PaginationInfoVO" resultType="ComcodeVO">
+		select 
+	</select>
+	
+	
+
+</mapper>

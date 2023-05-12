@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.solutions.EprodMapper">
+
+<insert id="templateInsert" parameterType="ExpertProdVO">
+	insert into TB_EXP_PROD(
+			EPROD_NUM, <!-- 상품번호 -->
+			EXPERT_ID,	<!-- 멘토아이디 -->
+			EPROD_CATE_NUM, <!-- 카테고리번호 -->
+			EPROD_NAME, <!-- 상품명 -->
+			EPROD_PRICE, <!-- 상품가격 -->
+			EPROD_TAG, <!-- 상품카테고리 -->
+			EPROD_LANG_CODE,<!-- 상품태그 --> 
+			EPROD_SUMMARY,<!-- 상품설명 --> 
+			EPROD_DATE <!-- 상품날짜 -->
+		)VALUES (
+			fn_create_num(to_char(sysdate,'yymmdd'), 'TB_EXP_PROD', 'EPROD_NUM', UPPER('slpo'))
+			, #{expertId}
+			, #{eprodCateNum}
+			, #{eprodName}
+			, #{eprodPrice}
+			, #{eprodTag}
+			, #{eprodLangCode}
+			, #{eprodSummary}
+			,SYSDATE
+						)
+
+</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

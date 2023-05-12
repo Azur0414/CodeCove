@@ -1,0 +1,13 @@
+package kr.or.ddit.mapper.admin;
+
+import java.util.List;
+import kr.or.ddit.admin.vo.ComcodeVO;
+import kr.or.ddit.common.PaginationInfoVO;
+
+public interface ComcodeMapper {
+
+	public int selectCodeCount(PaginationInfoVO<ComcodeVO> pagingVO);
+
+	public List<ComcodeVO> selectCodeList(PaginationInfoVO<ComcodeVO> pagingVO);
+
+}

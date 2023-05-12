@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.mapper.admin.ComcodeMapper">
+	 
+	 <!-- 공콩코드그룹 리스트 -->
+	 <select id="selectCodeGroupList" resultType="comCodeVO">
+		select 
+			COM_CODE_GRP, COM_CODE_GRP_NM
+		 from
+			TB_COM_CODE_GROUP
+	 </select>
+	 
+	 <select id="selectGrpList" resultType="comCodeVO">
+	 	select
+	 		COM_CODE_GRP, COM_CODE_GRP_NM
+	 	from
+	 		TB_COM_CODE_GROUP
+	 </select>
+	 
+	 <!-- 공통코드그룹 추가 -->
+	<insert id="insertComCodeGroup" parameterType="comCodeVO">
+		insert into 
+			TB_COM_CODE_GROUP (
+				COM_CODE_GRP, COM_CODE_GRP_NM
+			) values (
+				UPPER(#{comCodeGrp}), #{comCodeGrpNm}
+			)
+	</insert>
+	 
+	 <!-- 공통코드그룹 1개 -->
+	 <select id="selectComCodeGroup" parameterType="string" resultType="comCodeVO">
+		select
+			COM_CODE_GRP, COM_CODE_GRP_NM
+		from
+			TB_COM_CODE_GROUP
+		where
+			COM_CODE_GRP = UPPER(#{comCodeGrp})
+	</select>
+	
+	<!-- 공통코드그룹 수정 -->
+	<update id="modifyComCodeGroup" parameterType="comCodeVO">
+	 	update
+	 		TB_COM_CODE_GROUP
+	 	set
+	 		COM_CODE_GRP = UPPER(#{comCodeGrp}),
+			COM_CODE_GRP_NM = #{comCodeGrpNm}
+		where
+			COM_CODE_GRP = UPPER(#{comCodeGrp})
+	 </update>
+	 
+	 <!-- 공통코드그룹 삭제 -->
+	 <delete id="removeComCodeGroup" parameterType="string">
+	 	delete
+	 	from
+	 		TB_COM_CODE_GROUP
+	 	where
+	 		COM_CODE_GRP = UPPER(#{comCodeGrp})
+	 </delete>
+	 
+	 <!-- 공통코드 리스트 -->
+	 <select id="selectCodeList" resultType="comCodeVO">
+	 	select 
+			C.COM_CODE, C.COM_CODE_GRP, C.COM_CODE_NM, G.COM_CODE_GRP_NM
+	 	from
+			TB_COM_CODE C left outer join TB_COM_CODE_GROUP G on(C.COM_CODE_GRP = G.COM_CODE_GRP)
+	 </select>
+	 
+	 <!-- 공통코드 선택(1개) -->
+	<select id="selectCode" parameterType="String" resultType="comCodeVO">
+		select 
+			C.COM_CODE, C.COM_CODE_GRP, C.COM_CODE_NM, G.COM_CODE_GRP_NM
+		from
+			TB_COM_CODE C left outer join TB_COM_CODE_GROUP G on(C.COM_CODE_GRP = G.COM_CODE_GRP)
+		where
+			C.COM_CODE = #{comCode}
+	</select>
+
+	<insert id="registerComCode" parameterType="comCodeVO">
+		insert into
+			TB_COM_CODE (
+				COM_CODE, COM_CODE_GRP, COM_CODE_NM			
+			) values (
+				upper(#{comCode}), #{comCodeGrp}, #{comCodeNm}
+			)
+	</insert>	 
+	 
+	 <update id="modifyComCode" parameterType="comCodeVO">
+	 	update
+	 		TB_COM_CODE
+	 	set
+	 		COM_CODE_GRP = #{comCodeGrp},  
+	 		COM_CODE_NM = #{comCodeNm}
+	 	where
+	 		COM_CODE = #{comCode}
+	 </update>
+	 
+	 
+	 <delete id="removeComCode" parameterType="string">
+	 	delete
+	 	from
+	 		TB_COM_CODE
+	 	where
+	 		COM_CODE = UPPER(#{comCode})
+	 </delete>
+
+</mapper>

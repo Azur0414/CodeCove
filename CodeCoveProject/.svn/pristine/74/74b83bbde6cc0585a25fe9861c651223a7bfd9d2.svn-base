@@ -1,0 +1,117 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!--Main content-->
+	<section class="position-relative border-bottom">
+		<div class="container py-9 py-lg-11">
+			<div class="row">
+				<!--Sidebar-->
+				<div class="col-lg-3 mb-9 mb-lg-0">
+					<!--Sidebar sticky elements-->
+					<div class="position-sticky top-0 pt-lg-5">
+						<!--widget-->
+						<div class="sidebar-widget">
+							<div class="d-flex align-items-center mb-4">
+								<h5 class="mb-0 me-3">Newsletter</h5>
+								<span class="flex-grow-1 pt-1 bg-body-tertiary"></span>
+							</div>
+							<form>
+								<div class="mb-3">
+									<input type="email" name="email" class="mb-2 form-control"
+										placeholder="Email Address" required="">
+									<div class="d-grid">
+										<button type="submit" class="btn btn-primary btn-block">
+											Subscribe</button>
+									</div>
+								</div>
+								<p class="small text-body-secondary mb-0">
+									We’ll never share your details. View our <a href="#!">Privacy
+										Policy</a> for more info.
+								</p>
+							</form>
+						</div>
+						<!--widget-->
+						<div class="sidebar-widget pt-5">
+							<div class="d-flex align-items-center mb-4">
+								<h5 class="mb-0 me-3">Popular articles</h5>
+								<span class="flex-grow-1 pt-1 bg-body-tertiary"></span>
+							</div>
+
+							<a href="#!"
+								class="p-3 hover-lift hover-shadow rounded-3 border mb-3 d-block position-relative">
+								<div
+									class="d-flex justify-content-start w-100 mb-2 align-items-center">
+									<span
+										class="d-block border border-4 rounded-circle border-success me-2"></span>
+									<small class="text-body-secondary">UI UX</small>
+								</div>
+								<p class="text-reset lh-sm mb-0">Lorem enim ad minim veniam,
+									quis nostrud exercitation</p> <small class="text-body-secondary">
+							</small>
+							</a> <a href="#!"
+								class="p-3 hover-lift hover-shadow rounded-3 border mb-3 d-block position-relative">
+								<div
+									class="d-flex justify-content-start w-100 mb-2 align-items-center">
+									<span
+										class="d-block border border-4 rounded-circle border-primary me-2"></span>
+									<small class="text-body-secondary">Business</small>
+								</div>
+								<p class="text-reset lh-sm mb-0">Lorem enim ad minim veniam,
+									quis nostrud exercitation</p> <small class="text-body-secondary">
+							</small>
+							</a> <a href="#!"
+								class="p-3 hover-lift hover-shadow rounded-3 border mb-3 d-block position-relative">
+								<div
+									class="d-flex justify-content-start w-100 mb-2 align-items-center">
+									<span
+										class="d-block border border-4 rounded-circle border-warning me-2"></span>
+									<small class="text-body-secondary">Community</small>
+								</div>
+								<p class="text-reset lh-sm mb-0">Lorem enim ad minim veniam,
+									quis nostrud exercitation</p> <small class="text-body-secondary">
+							</small>
+							</a>
+						</div>
+						<!--Sidebar sticky elements-->
+						<div class="position-sticky top-0 pt-5">
+							<!--widget-->
+							<div class="sidebar-widget">
+								<div class="d-flex align-items-center mb-4">
+									<h5 class="mb-0 me-3">Categories</h5>
+									<span class="flex-grow-1 pt-1 bg-body-tertiary"></span>
+								</div>
+								<div class="d-flex flex-wrap gap-2">
+									<a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Javascript </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Bootstrap </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Gsap </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Design </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Business </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										UI UX </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Code </a> <a href="#!"
+										class="badge bg-secondary-subtle border border-secondary-subtle text-body fw-medium hover-shadow">
+										Community </a>
+								</div>
+							</div>
+							<!--widget-->
+							<div class="sidebar-widget pt-5">
+								<a href="#"
+									class="bg-body-secondary rounded p-4 d-flex align-items-center justify-content-center min-height-2x">
+									<span class="text-small text-body-secondary">Advertisement</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+

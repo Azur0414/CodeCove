@@ -1,0 +1,9 @@
+package kr.or.ddit.expert.service;
+
+import kr.or.ddit.expert.vo.ExpertProdVO;
+
+public interface IEprodService {
+
+	public void templateInsert(ExpertProdVO expertProdVO) throws Exception;
+
+}

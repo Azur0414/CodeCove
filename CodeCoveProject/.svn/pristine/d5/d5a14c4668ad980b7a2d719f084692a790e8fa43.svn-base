@@ -1,0 +1,17 @@
+package kr.or.ddit.mapper.solutions;
+
+import kr.or.ddit.expert.vo.ExpertProdVO;
+import kr.or.ddit.expert.vo.MyExpertVO;
+
+public interface EprodMapper {
+
+	public void templateInsert(ExpertProdVO expertProdVO) throws Exception;
+
+	public ExpertProdVO templateDetail(String eprodNum);
+
+	public void buyInsert(MyExpertVO myExpertVO);
+
+	public void paySuccessInsert(MyExpertVO myExpertVO);
+
+
+}
